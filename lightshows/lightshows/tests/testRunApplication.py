@@ -1,10 +1,10 @@
 import os
 import unittest
 
-from lightshows import Grid, LightsCalculatorImpl
+from lightshows import Grid
 from lightshows.DataSource import DataSource
 from lightshows.Grid import Grid
-from lightshows.LightsCalculatorImpl import LightsCalculatorImpl
+from lightshows.LigtsCalculatorImpl import LightsCalculatorImpl
 from lightshows.ReadInstructionsImpl import ReadInstructionsImpl
 
 
@@ -13,6 +13,8 @@ class MockDataSource(DataSource):
     def getSourceData(self):
         return os.path.abspath('TestData.txt')
 
+
+# @todo add unit tests for both parts
 
 class MyTestCase(unittest.TestCase):
 
@@ -24,7 +26,7 @@ class MyTestCase(unittest.TestCase):
         LightsCalculatorImpl.calculateLights(LightsCalculatorImpl,listOfInstructions)
 
         result = sum(sum(Grid.getGrid(Grid)))
-        expected = 998004
+        expected = 1003996
 
         self.assertEqual(expected, result)
 

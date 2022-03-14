@@ -1,8 +1,8 @@
 from lightshows.Grid import Grid
 from lightshows.LightsCalculator import LightsCalculator
 
-
 class LightsCalculatorImpl(LightsCalculator):
+
 
     def calculateLights(self, listOfInstructions):
         grid = Grid()
@@ -20,17 +20,14 @@ class LightsCalculatorImpl(LightsCalculator):
 
                     if currentCommand.find(turnOn) != -1:
 
-                        if Grid.getValueWithCoords(grid,x,y) == 0:
-                            Grid.setValueWithCoords(grid,1,x,y)
+                            prev = Grid.getValueWithCoords(grid, x, y)
+                            Grid.setValueWithCoords(grid,prev + 1,x,y)
 
                     elif currentCommand.find(turnOff) != -1:
 
-                        if Grid.getValueWithCoords(grid,x,y) == 1:
-                            Grid.setValueWithCoords(grid,0,x,y)
+                            curr = Grid.getValueWithCoords(grid, x, y) - 1
+                            Grid.setValueWithCoords(grid,max(0,curr),x,y)
 
                     elif currentCommand.find(toggle) != -1:
-                        if Grid.getValueWithCoords(grid, x, y) == 1:
-                            Grid.setValueWithCoords(grid, 0, x, y)
-                        elif Grid.getValueWithCoords(grid, x, y) == 0:
-                            Grid.setValueWithCoords(grid, 1, x, y)
-
+                        prev = Grid.getValueWithCoords(grid, x, y)
+                        Grid.setValueWithCoords(grid,prev + 2, x, y)
