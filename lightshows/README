@@ -1,0 +1,11 @@
+to install the repo, clone the following: https://github.com/mira2626/lightshows.git
+
+you will find the implementation of the first part in the branch: Part1
+you will find the implementation of the second part in the branch: Part2
+
+
+you can run the app with running RunApplication.py
+there is also an integration test under tests/testRunApplication.py
+
+
+todo comments have been placed in areas that could be improved
