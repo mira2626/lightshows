@@ -5,6 +5,8 @@ from lightshows.ReadInstructionsImpl import ReadInstructionsImpl
 
 
 class RunApplication():
+# @todo handle versioning (with tags?)
+# @todo handle packaging and distribution
 
     def main(self):
 
